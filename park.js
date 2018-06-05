@@ -15,4 +15,14 @@ Park.prototype.removeDinosaurByType = function (type) {
   }
 };
 
+Park.prototype.dinosWithOver2Offspring = function() {
+  results = [];
+  for (dinosaur of this.enclosure) {
+    if (dinosaur.offspringPerYear > 2) {
+      results.push(dinosaur);
+    }
+  }
+  return results;
+};
+
 module.exports = Park;
