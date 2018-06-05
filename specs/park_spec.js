@@ -39,4 +39,9 @@ describe('Park', function() {
     park.addDinosaur(dinosaur3);
     assert.strictEqual(park.dinosWithOver2Offspring().length, 1);
   });
+
+  it('should show the projected number of dinosaurs after 1 year, starting with 1 dino', function() {
+    park.addDinosaur(dinosaur);
+    assert.strictEqual(park.dinoCountInOneYear(), 4);
+  })
 })
