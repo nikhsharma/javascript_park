@@ -42,6 +42,23 @@ describe('Park', function() {
 
   it('should show the projected number of dinosaurs after 1 year, starting with 1 dino', function() {
     park.addDinosaur(dinosaur);
-    assert.strictEqual(park.dinoCountInOneYear(), 4);
-  })
+    assert.strictEqual(park.projectedDinoCount(1), 4);
+  });
+
+  it('should project the number of dinosaurs after 2 years, starting with 1 dino', function() {
+    park.addDinosaur(dinosaur);
+    assert.strictEqual(park.projectedDinoCount(2), 16);
+  });
+
+  it('should project the number of dinosaurs after 3 years, starting with 1 dino', function() {
+    park.addDinosaur(dinosaur);
+    assert.strictEqual(park.projectedDinoCount(3), 64);
+  });
+
+  it('should project dino count after 2 years, starting with 2 dinos', function() {
+    park.addDinosaur(dinosaur);
+    park.addDinosaur(dinosaur2);
+    assert.strictEqual(park.projectedDinoCount(2), 20);
+  });
+
 })

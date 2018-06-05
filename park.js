@@ -25,10 +25,10 @@ Park.prototype.dinosWithOver2Offspring = function() {
   return results;
 };
 
-Park.prototype.dinoCountInOneYear = function() {
+Park.prototype.projectedDinoCount = function(years) {
   total = 0;
   for (dinosaur of this.enclosure) {
-    total += (1 + dinosaur.offspringPerYear);
+    total += (1 + dinosaur.offspringPerYear)**years;
   }
   return total;
 };
